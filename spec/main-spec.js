@@ -1,4 +1,8 @@
-const main = require('../main/main');
+
+'use strict'
+const main = require('../main/main.js');
+var loadAllItems = require('../main/datbase.js').func_a;
+var printInventory = require('../main/main.js');
 
 describe('pos', function () {
     var allItems;

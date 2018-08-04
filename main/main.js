@@ -1,7 +1,5 @@
-'use strict'
-var loadAllItems = require('../main/datbase.js').func_a;
-var loadPromotions = require('../main/datbase.js').func_b;
 
+//将选中的所有条码用对象表示，并存入数组，格式：[{ITEM000001:2}，{ITEM000002:1}]，主要目的条码去重，并统计每个条码个数
 function formDuplicatedItem(selectedItem){
     var tempObj = {};
     var formedDuplicatedItem = [];
@@ -22,6 +20,7 @@ function formDuplicatedItem(selectedItem){
     return formedDuplicatedItem;
 }
 
+//将选中的带数字的条码用对象表示，并存入数组，格式[{ITEM000001:2}，{ITEM000002:1}]，主要目的条码去数字，并统计每个条码个数
 function formSelectedItem(formedDuplicatedItem){
     var formedSelectedItem = [];
     for (var i in formedDuplicatedItem) {
@@ -38,6 +37,7 @@ function formSelectedItem(formedDuplicatedItem){
     return formedSelectedItem;
 }
 
+//获取选中商品的所有信息
 function getSelectedItemInfo(formedSelectedItem){
     var allItems = loadAllItems();
     var selectedItemInfo = formedSelectedItem;
@@ -79,10 +79,7 @@ function getPromotionInfo(selectedItemInfo){
     return promotionInfo;
 }
 
-function printInventory(selectedItem){  
-    var formedDuplicatedItem = formDuplicatedItem(selectedItem)
-    var formedSelectedItem = formSelectedItem(formedDuplicatedItem);
-    var selectedItemInfo = getSelectedItemInfo(formedSelectedItem);
+function printInventory(selectedItemInfo){  
     var promotionInfo = getPromotionInfo(selectedItemInfo);
 
     //循环打印购物清单，计算总价
@@ -117,9 +114,5 @@ function printInventory(selectedItem){
     return output;
 }
 
-module.exports = function main(selectedItem) {
-    var output = printInventory(selectedItem);
-    console.log(output);
-    return output;
-};
+
 

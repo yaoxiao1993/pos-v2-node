@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>pos</title>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="node_modules/lodash/lodash.min.js"></script>
+        <script  type="text/javascript" src="main/database.js"></script>
+        <script  type="text/javascript" src="main/main.js"></script>
+        <script  type="text/javascript" src="main/test.js"></script>
+        <style type="text/css">
+            th{border: 2px rgb(7, 175, 139) solid;width:90px; }
+            td{border-width: 2px 2px 2px 2px;border-style: solid;border-color: 8DB1A1;width:90px; }
+            .cart{border:0}
+            .number{border:0}
+            .changeNum{width:30px}
+        </style>
+    </head>
+    <body>
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>barcode</th>
+                    <th>name</th>
+                    <th>unit</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    <a id="cartpage" href="cart.html" target="_blank"><button>购物车</button></a>
+</html>

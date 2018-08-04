@@ -1,3 +1,4 @@
+
 function loadAllItems() {
     return [
         {
@@ -52,7 +53,3 @@ function loadPromotions() {
     ];
 }
 
-module.exports = {
-    'func_a':loadAllItems,
-    'func_b':loadPromotions
-};
